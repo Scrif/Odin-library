@@ -19,28 +19,32 @@
     <main>
         <div class="container" id="form-container">
             <form action="">
-                <div class="col">
-                    <div class="form-control">
-                        <label for="name">Book</label>
-                        <input type="text" id="name" />
+                <div class="row">
+                    <div class="col">
+                        <div class="form-control">
+                            <label for="name"></label>
+                            <input type="text" id="name" placeholder="Book" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-control">
+                            <label for="author"></label>
+                            <input type="text" id="author" placeholder="Author" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-control">
+                            <label for="status"></label>
+                            <select name="status" class="form-select" id="status">
+                                <option value="read">Read</option>
+                                <option value="unread">Unread</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <input type="submit" value="submit" class="btn btn-primary" />
                     </div>
                 </div>
-                <div class="col">
-                    <div class="form-control">
-                        <label for="author">Author</label>
-                        <input type="text" id="author" />
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-control">
-                        <label for="status">Status</label>
-                        <select name="status" id="status">
-                            <option value="read">Read</option>
-                            <option value="unread">Unread</option>
-                        </select>
-                    </div>
-                </div>
-                <input type="submit" value="submit" class="button-primary" />
             </form>
         </div>
         <div class="container" id="library-container">
