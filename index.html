@@ -5,28 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Project</title>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
-        rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
-        crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="./style.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>My Library</h1>
+    <header class="container">
+        <h2>My Library</h2>
         <p>Project built as part of The Odin Project coursework</p>
     </header>
     <main>
         <div class="container" id="form-container">
             <form action="" class="form-inline">
-                <label class="sr-only" for="title">Title</label>
+                <label class="sr-only" for="inlineforminputtitle">Title</label>
                 <input type="text" class="form-control mb-2 mr-sm-2" id="title" placeholder="Book Title">
 
-                <label class="sr-only" for="author">Author</label>
+                <label class="sr-only" for="inlineforminputauthor">Author</label>
                 <input type="text" class="form-control mb-2 mr-sm-2" id="author" placeholder="Author">
 
-                <label class="sr-only" for="status">Status</label>
-                <select class="form-select" name="status" id="status">
+                <label class="sr-only" for="inlineforminputstatus">Status</label>
+                <select class="custom-select my-1 mr-sm-2" name="status" id="status">
                     <option value="read">Read</option>
                     <option value="unread">Unread</option>
                 </select>
@@ -35,7 +33,7 @@
             </form>
         </div>
         <div class="container" id="library-container">
-            <table class="table">
+            <table class="sortable table">
                 <tr>
                     <th>Title</th>
                     <th>Author</th>
