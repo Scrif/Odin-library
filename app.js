@@ -1,16 +1,16 @@
 let library;
 
 const DEFAULT_DATA = [
-    { title: "The Return of the King", author: "Tolkien", status: "read" },
+    { name: "The Return of the King", author: "Tolkien", status: "read" },
     {
-        title: "Gardens of the Moon",
+        name: "Gardens of the Moon",
         author: "Steven Erikson",
         status: "unread",
     },
-    { title: "Alice in Wonderland", author: "Lewis Caroll", status: "unread" },
+    { name: "Alice in Wonderland", author: "Lewis Caroll", status: "unread" },
 ];
 
-const $title = document.querySelector("#title");
+const $name = document.querySelector("#name");
 const $author = document.querySelector("#author");
 const $status = document.querySelector("#status");
 const $tableBody = document.querySelector("#book-table-body");
@@ -36,19 +36,19 @@ const $table = document
     });
 
 class Book {
-    constructor(title, author, status) {
-        this.title = title;
+    constructor(name, author, status) {
+        this.name = name;
         this.author = author;
         this.status = status;
     }
 }
 
 function addBookToLibrary() {
-    if ($title.value.length === 0 || $author.value.length === 0) {
+    if ($name.value.length === 0 || $author.value.length === 0) {
         alert("Please fill the missing fields.");
         return;
     }
-    const newBook = new Book($title.value, $author.value, $status.value);
+    const newBook = new Book($name.value, $author.value, $status.value);
 
     library.push(newBook);
     updateLocalStorage();
@@ -61,21 +61,23 @@ function changeStatus(book) {
 }
 
 function deleteBook(currentBook) {
-    library.splice(currentBook, currentBook + 1);
+    const index = array.indexOf(currentBook);
+    
+    library.splice(currentBook);
 }
 
-function findBook(libraryArray, title) {
+function findBook(libraryArray, name) {
     if(libraryArray.length === 0 || libraryArray === null) {
         return;
     }
     for (book of libraryArray)
-        if (book.title === title) {
+        if (book.name === name) {
             return libraryArray.indexOf(book);
         }
 }
 
 function clearForm() {
-    $title.value = "";
+    $name.value = "";
     $author.value = "";
 }
 
@@ -97,7 +99,7 @@ function render () {
     library.forEach((book) => {
         const htmlBook = `
             <tr>
-                <td>${book.title}</td>
+                <td>${book.name}</td>
                 <td>${book.author}</td>
                 <td><button class="status-button btn btn-light">${book.status}</button></td>
                 <td><button class="delete btn btn-danger">delete</button></td>
